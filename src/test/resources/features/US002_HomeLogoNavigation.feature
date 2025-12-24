@@ -11,7 +11,6 @@ Feature: Home Page Logo Navigation
 
   @TC201
   @smoke
-  @positive
   Scenario: Navigate to course main page by clicking logo
     When User sees the company logo on the top left corner
     And User clicks on the company logo

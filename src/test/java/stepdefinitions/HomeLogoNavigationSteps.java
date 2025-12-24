@@ -5,13 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.HomePage;
 import pages.LoginPage;
 import utils.BaseDriver;
 
-public class Home_LogoNavigationSteps {
+public class HomeLogoNavigationSteps {
 
     WebDriver driver;
     LoginPage loginPage;
