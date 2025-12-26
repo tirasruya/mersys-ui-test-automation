@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Allure;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,6 +45,22 @@ public class LoginPage extends BasePage {
     public void clickLoginButton() {
         LOGGER.info("Clicking login button");
         clickElement(loginButton);
+    }
+
+    public void loginAsStudent() {
+        String username = System.getenv("TEST_USERNAME");
+        String password = System.getenv("TEST_PASSWORD");
+
+        Assert.assertNotNull(username, "TEST_USERNAME is not set");
+        Assert.assertNotNull(password, "TEST_PASSWORD is not set");
+
+        LOGGER.info("Logged in as user: {}", username);
+
+        enterUsername(username);
+        enterPassword(password);
+        clickLoginButton();
+
+        Allure.label("logged_in_user", "STUDENT");
     }
 
     public void verifyErrorMessage(String errorType, String expectedError) {

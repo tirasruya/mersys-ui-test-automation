@@ -2,8 +2,7 @@ package runners;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+
 
 @CucumberOptions(
         features = "src/test/resources/features",
@@ -17,9 +16,4 @@ import org.testng.annotations.Parameters;
         }
 )
 public class CucumberRunner extends AbstractTestNGCucumberTests {
-    @BeforeTest
-    @Parameters("browser")
-    public void defineBrowser(String browser) {
-        System.setProperty("browser", browser);
-    }
 }

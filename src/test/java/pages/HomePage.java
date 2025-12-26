@@ -19,13 +19,13 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public void verifyHomePage(String expectedUsername) {
+    public void verifyHomePage(String expectedText) {
 
         LOGGER.info("Verifying Home Page is opened");
         Assert.assertTrue(isDisplayed(welcomeText), "Welcome text is not displayed on Home Page");
         String actualText = welcomeText.getText().trim();
         LOGGER.debug("Actual welcome text: {}", actualText);
-        Assert.assertTrue(actualText.contains(expectedUsername), "Welcome text does not contain expected username. Actual: " + actualText);
+        Assert.assertTrue(actualText.contains(expectedText), "Welcome text does not contain expected text. Actual: " + actualText);
     }
 
     public boolean isLogoDisplayed() {
@@ -40,7 +40,7 @@ public class HomePage extends BasePage {
 
     public void verifyRedirectedToTechnoStudy() {
         switchToNewTab();
-        wait.until(ExpectedConditions.urlToBe("https://techno.study/"));
+        wait.until(ExpectedConditions.urlToBe("https://technostudy.com.tr/"));
         LOGGER.info("Verifying redirection to techno.study");
     }
 

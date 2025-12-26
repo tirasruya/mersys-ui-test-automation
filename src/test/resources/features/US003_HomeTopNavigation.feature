@@ -9,7 +9,6 @@ Feature: Home - Top Navigation Menu Functionality
 
   Background:
     Given User is logged in as a student
-    And User is on the home page
 
   @TC301
   @smoke

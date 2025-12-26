@@ -13,7 +13,7 @@ Feature: Login Feature
   @smoke
   @positive
   Scenario: User logs in successfully with valid student credentials
-    When User enters username "Student_10" and password "S12345"
+    When User enter valid student credentials
     And User clicks on login button
     Then User should be redirected to the homepage
 
@@ -25,9 +25,9 @@ Feature: Login Feature
     Then User should see error message "<expectedError>" for "<errorType>"
 
     Examples:
-      | username   | password | expectedError                | errorType |
-      | wrongUser  | S12345   | Invalid username or password | login     |
-      | Student_10 | wrongPwd | Invalid username or password | login     |
-      | wrongUser  | wrongPwd | Invalid username or password | login     |
-      |            | S12345   | E-mail is required           | username  |
-      | Student_10 |          | Password is required         | password  |
+      | username  | password | expectedError                | errorType |
+      | wrongUser | 12345    | Invalid username or password | login     |
+      | Student   | wrongPwd | Invalid username or password | login     |
+      | wrongUser | wrongPwd | Invalid username or password | login     |
+      |           | 12345    | E-mail is required           | username  |
+      | Student   |          | Password is required         | password  |

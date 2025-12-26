@@ -13,22 +13,35 @@ public class LoginSteps {
 
     WebDriver driver;
     LoginPage loginPage;
-    HomePage homepage;
+    HomePage homePage;
 
     @Given("User is on the login page")
     public void userIsOnLoginPage() {
         driver = BaseDriver.getDriver();
         loginPage = new LoginPage(driver);
-        homepage = new HomePage(driver);
-        Assert.assertTrue(Objects.requireNonNull(driver.getCurrentUrl()).contains("mersys"));
+        homePage = new HomePage(driver);
+        Assert.assertTrue(Objects.requireNonNull(driver.getCurrentUrl()).contains("mersys"),"User is not on login page");
+    }
+
+    @When("User enter valid student credentials")
+    public void userLogsInWithValidStudentCredentials() {
+
+        String username = System.getenv("TEST_USERNAME");
+        String password = System.getenv("TEST_PASSWORD");
+
+        Assert.assertNotNull(username, "Student username is not set");
+        Assert.assertNotNull(password, "Student password is not set");
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
     }
 
     @When("User enters username {string} and password {string}")
     public void userEntersCredentials(String username, String password) {
-        if (username != null && !username.isEmpty()) {
+        if (username != null && !username.isBlank()) {
             loginPage.enterUsername(username);
         }
-        if (password != null && !password.isEmpty()) {
+        if (password != null && !password.isBlank()) {
             loginPage.enterPassword(password);
         }
     }
@@ -40,7 +53,7 @@ public class LoginSteps {
 
     @Then("User should be redirected to the homepage")
     public void userShouldBeRedirectedToHomepage() {
-        homepage.verifyHomePage("Student_10");
+        homePage.verifyHomePage("Welcome");
     }
 
     @Then("User should see error message {string} for {string}")
