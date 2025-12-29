@@ -3,7 +3,7 @@
 
     <test name="Chrome Tests">
         <parameter name="browser" value="chrome"/>
-        <parameter name="cucumber.filter.tags" value="US001"/>
+        <parameter name="cucumber.filter.tags" value="@US003"/>
         <classes>
             <class name="runners.CucumberRunner"/>
         </classes>

@@ -28,5 +28,4 @@ Feature: Home - Top Navigation Menu Functionality
       | Hamburger        |
       | Announcements    |
       | Messages         |
-      | ProfileLogo     |
       | ProfileSettings |
