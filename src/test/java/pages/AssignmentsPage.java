@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.base.BasePage;
 import java.util.List;
+import java.util.Random;
 
 import static utils.BaseDriver.getDriver;
 
@@ -20,6 +21,9 @@ public class AssignmentsPage extends BasePage {
 
     @FindBy(css = ".cdk-overlay-pane")
     private WebElement assignmentsCountOverlay;
+
+    @FindBy(css = "button[aria-label='Discussion']")
+    private WebElement discussionButton;
 
     WebDriver driver = getDriver();
     Actions actions = new Actions(driver);
@@ -74,6 +78,35 @@ public class AssignmentsPage extends BasePage {
             String text = task.getText().trim();
             LOGGER.debug("Task content: {}", text);
             Assert.assertTrue(text.contains("B8"), "Non-B8 task found: " + text);
+        }
+    }
+
+    public void openRandomTask() {
+        By assignedTasks =
+                By.xpath("//*[@id='container-3']//*[contains(text(),'B8')]");
+
+        List<WebElement> tasks =
+                wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(assignedTasks));
+
+        Assert.assertFalse(tasks.isEmpty(), "No assigned tasks found");
+
+        int randomIndex = new Random().nextInt(tasks.size());
+
+        WebElement selectedTask = tasks.get(randomIndex);
+        String taskName = selectedTask.getText();
+
+        LOGGER.info("Random task selected: index={}, name='{}'",
+                randomIndex, taskName);
+
+        selectedTask.click();
+    }
+
+    public boolean isDiscussionButtonDisplayed() {
+        try {
+            return discussionButton.isDisplayed();
+        } catch (Exception e) {
+            LOGGER.error("Discussion button is NOT displayed");
+            return false;
         }
     }
 }
