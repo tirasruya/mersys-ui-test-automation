@@ -24,7 +24,7 @@ public class CommonSteps {
         homePage.verifyHomePage("Welcome");
     }
 
-    @And("User navigates to Assignments page")
+    @And("User is on the Assignments page")
     public void userNavigatesToAssignmentsPage() {
         homePage.clickMenuItem("Assignments");
         homePage.verifyMenuAction("Assignments");

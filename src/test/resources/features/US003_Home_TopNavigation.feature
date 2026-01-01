@@ -10,7 +10,7 @@ Feature: Home - Top Navigation Menu Functionality
   Background:
     Given User is logged in as a student
 
-  @TC301
+  @TC0301
   @smoke
   Scenario Outline: Verify top navigation menu items are visible and functional
     Then User should see "<menu>" menu item on top navigation

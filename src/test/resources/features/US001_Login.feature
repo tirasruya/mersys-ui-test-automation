@@ -9,7 +9,7 @@ Feature: Login Feature
   Background:
     Given User is on the login page
 
-  @TC101
+  @TC0101
   @smoke
   @positive
   Scenario: User logs in successfully with valid student credentials
@@ -17,7 +17,7 @@ Feature: Login Feature
     And User clicks on login button
     Then User should be redirected to the homepage
 
-  @TC102
+  @TC0102
   @negative
   Scenario Outline: User cannot log in with invalid or missing credentials
     When User enters username "<username>" and password "<password>"

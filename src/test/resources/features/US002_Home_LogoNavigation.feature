@@ -9,7 +9,7 @@ Feature: Home Page Logo Navigation
   Background:
     Given User is logged in as a student
 
-  @TC201
+  @TC0201
   @smoke
   Scenario: Navigate to course main page by clicking logo
     When User sees the company logo on the top left corner

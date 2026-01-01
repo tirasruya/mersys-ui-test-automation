@@ -10,7 +10,7 @@ Feature: Assignments - Assigned Tasks Access
   Background:
     Given User is logged in as a student
 
-  @TC181
+  @TC1801
   @smoke
   Scenario: Verify assignments link visibility, count on hover, and assigned tasks list
     Then User should see Assignments logo on the home page
