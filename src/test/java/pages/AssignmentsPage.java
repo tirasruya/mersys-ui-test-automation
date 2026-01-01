@@ -129,6 +129,7 @@ public class AssignmentsPage extends BasePage {
                 "Star icon is not displayed on assignments list"
         );
 
+        LOGGER.info("Submit button icon is displayed: ", isActionIconDisplayed("file-import"));
         LOGGER.info("Assignment action icons are displayed");
     }
 
@@ -145,5 +146,21 @@ public class AssignmentsPage extends BasePage {
             LOGGER.error("Discussion button is NOT displayed");
             return false;
         }
+    }
+
+    public void clickRandomSubmitIcon() {
+        By submitIconLocator =
+                By.xpath("//ms-icon-button[@icon='file-import']");
+
+        List<WebElement> submitIcons =
+                wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(submitIconLocator));
+
+        Assert.assertFalse(
+                submitIcons.isEmpty(),
+                "No submit icon found for any assignment"
+        );
+
+        int randomIndex = new Random().nextInt(submitIcons.size());
+       clickElement(submitIcons.get(randomIndex));
     }
 }
