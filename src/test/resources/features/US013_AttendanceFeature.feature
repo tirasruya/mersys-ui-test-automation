@@ -23,7 +23,7 @@ Feature: Attendance Feature
     And the user enters "<description>" as excuse description
     And the user attaches a file from path "<filePath>" if provided
     And the user clicks the "Send" button
-    Then the "success" message should be displayed
+    Then the "success" message must be displayed
 
 
     Examples:

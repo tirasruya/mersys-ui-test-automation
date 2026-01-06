@@ -86,7 +86,7 @@ public class Attendance_FeatureSteps {
         }
     }
 
-    @Then("the {string} message should be displayed")
+    @Then("the {string} message must be displayed")
     public void verifyMessage(String msg) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15)); // Süreyi 15 sn'ye çıkardım
 
