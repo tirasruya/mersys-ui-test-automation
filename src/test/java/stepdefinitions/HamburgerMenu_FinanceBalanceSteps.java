@@ -36,6 +36,4 @@ public class HamburgerMenu_FinanceBalanceSteps {
     public void installmentTableShouldBeDisplayed() {
         paymentPage.verifyInstallmentTableDisplayed();
     }
-
-
 }

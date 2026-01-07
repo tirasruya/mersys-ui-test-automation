@@ -47,8 +47,6 @@ public class PaymentPage extends BasePage {
         header.click();
     }
 
-
-
     public void verifyInstallmentTableDisplayed() {
         openFeesPanelIfClosed();
 
@@ -58,7 +56,5 @@ public class PaymentPage extends BasePage {
         By rows = By.xpath("//table//tbody//tr");
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(rows, 0));
     }
-
-
 
 }
