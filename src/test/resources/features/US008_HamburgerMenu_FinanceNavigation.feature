@@ -16,3 +16,4 @@ Feature: Hamburger Menu - Finance Navigation
     And User clicks on Finance menu item
     And User clicks on My Finance menu item
     Then Finance page should be displayed
+

@@ -64,8 +64,6 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div[contains(@class,'mat-mdc-menu-panel')]//button[.//span[normalize-space()='My Finance']]")
     private WebElement hamburgerMyFinanceItem;
 
-
-
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -322,6 +320,11 @@ public class HomePage extends BasePage {
     public void clickMyFinanceFromHamburger() {
         wait.until(ExpectedConditions.elementToBeClickable(hamburgerMyFinanceItem));
         clickElement(hamburgerMyFinanceItem);
+    }
+
+    public void clickCalendarFromTopNav() {
+        wait.until(ExpectedConditions.elementToBeClickable(calendarLogo));
+        clickElement(calendarLogo);
     }
 
 

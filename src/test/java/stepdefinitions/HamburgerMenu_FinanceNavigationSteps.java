@@ -38,5 +38,4 @@ public class HamburgerMenu_FinanceNavigationSteps {
     public void financePageShouldBeDisplayed() {
         financePage.verifyFinancePageOpened();
     }
-
 }
