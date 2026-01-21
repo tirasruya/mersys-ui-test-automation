@@ -23,7 +23,6 @@ public class CalendarFeature_NavigationSteps {
         driver = BaseDriver.getDriver();
         homePage = new HomePage(driver);
         calendarPage = new CalendarPage(driver);
-
         homePage.clickCalendarFromTopNav();
     }
     @Then("Calendar page should be displayed")
