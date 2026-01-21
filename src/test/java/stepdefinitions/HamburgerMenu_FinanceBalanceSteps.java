@@ -17,6 +17,7 @@ public class HamburgerMenu_FinanceBalanceSteps {
     private final FinancePage financePage = new FinancePage(driver);
     private final PaymentPage paymentPage = new PaymentPage(driver);
 
+
     @And("User clicks on student row on Finance page")
     public void userClicksOnStudentRowOnFinancePage() {
         financePage.clickStudentRowByName("Taner Ozcelik");

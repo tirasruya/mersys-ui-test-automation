@@ -17,3 +17,4 @@ Feature: Hamburger Menu - Finance Fee/Balance Detail
 
     And User clicks on Fee Balance Detail tab
     Then Installment table should be displayed
+

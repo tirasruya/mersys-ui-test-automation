@@ -31,7 +31,6 @@ public class HamburgerMenu_FinanceDownloadDocumentsSteps {
     public void financeReportShouldBeDownloadedAs(String type) {
         Assert.assertTrue(
                 financePage.isReportDownloaded(type),
-                "Finance report was not downloaded as " + type
-        );
+                "Finance report was not downloaded as " + type);
     }
 }
