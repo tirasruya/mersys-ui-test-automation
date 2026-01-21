@@ -22,8 +22,7 @@ public class CalendarFeature_CourseDetailsSteps {
     public void courseNameShouldBeVisibleOnCourseDetailsPopup() {
         Assert.assertTrue(
                 calendarPage.isCourseNameVisibleOnPopup(),
-                "Course name is not visible or empty on popup!"
-        );
+                "Course name is not visible or empty on popup!");
     }
 
     @And("Meeting not started message should be visible on popup")
