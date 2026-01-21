@@ -26,3 +26,4 @@ Feature: Calendar - Student can access recording for ended courses and play vide
     And Play icon should be visible on video
     When User clicks Play icon
     Then Video should start playing
+

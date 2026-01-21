@@ -40,4 +40,5 @@ public class CalendarFeature_AccessRecordingSteps {
     public void videoShouldStartPlaying() {
         calendarPage.verifyVideoIsPlaying();
     }
+
 }
